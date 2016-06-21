@@ -55,7 +55,14 @@ public class GUIManager : MonoBehaviour
 
     public void AddCoin(int coinsToAdd)
     {
-        coin += coinsToAdd;
+        if (GameMAnager.manager.DoubleCoins)
+        {
+            coin = coin + (coinsToAdd * 2);
+        }
+        else
+        {
+            coin += coinsToAdd;
+        }
     }
 
     public void RestartYes()
