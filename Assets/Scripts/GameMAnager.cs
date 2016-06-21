@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.IO;
 using System.Collections;
+using UnityEngine.Advertisements;
 using System.Runtime.Serialization.Formatters.Binary;
 
 public class GameMAnager : MonoBehaviour
@@ -16,10 +17,13 @@ public class GameMAnager : MonoBehaviour
 
     //bool to see if first time playing
     public bool firstTime = true;
+    public bool DoubleCoins = false;
 
 	// Use this for initialization
 	void Awake ()
     {
+        Advertisement.Initialize("1084803", true);
+
         Load();
 
         if(firstTime)
@@ -76,6 +80,24 @@ public class GameMAnager : MonoBehaviour
     public int CoinValue()
     {
         return coins;
+    }
+
+    public void ShowAd()
+    {
+        if(Advertisement.IsReady())
+        {
+            Advertisement.Show();
+        }
+    }
+
+    public void CoinDouble()
+    {
+        if (Advertisement.IsReady())
+        {
+            Advertisement.Show();
+        }
+
+        DoubleCoins = true;
     }
 }
 
