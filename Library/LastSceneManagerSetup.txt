@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Evolution_Menu.unity
+- path: Assets/Scene/Evolution_SplashScreen.unity
   isLoaded: 1
   isActive: 1
